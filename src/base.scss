@@ -53,7 +53,7 @@ code {
 
 .tile-section {
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .game-tile {
