@@ -3,7 +3,7 @@ import React from 'react';
 const Tile = (props) => {
 
   return <div>
-    <p>{ props.tileName }</p>
+    <div>{ props.tileName }</div>
   </div>
 }
 

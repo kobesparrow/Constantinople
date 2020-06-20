@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './base.scss';
 import Game from './components/Game/Game';
 
 
