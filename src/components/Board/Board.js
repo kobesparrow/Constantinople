@@ -3,13 +3,26 @@ import Tile from '../Tile/Tile';
 
 class Board extends Component {
 
-  // const tiles = 
 
   render() {
 
+
+    const tiles = this.props.boardLayout.map(tile => {
+      return <Tile tileName={ tile }/>
+    })
+
+    let gameBoard
+
+
+
+    if (this.props.boardLayout.length !== 0) {
+      gameBoard = <div>{ tiles }</div>
+    } else {
+      gameBoard = <div>Loading...</div>
+    }
+
     return <div>
-        Hello
-        <Tile />
+        { gameBoard }
       </div>
   }
 }

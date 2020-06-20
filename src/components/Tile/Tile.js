@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Tile = () => {
+const Tile = (props) => {
 
-  return <div>Here is a tile</div>
+  return <div>
+    <p>{ props.tileName }</p>
+  </div>
 }
 
 export default Tile

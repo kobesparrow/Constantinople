@@ -4,8 +4,9 @@ class Setup extends Component {
 
 
   generateBoard = () => {
-    let tiles = [1,2,3,4,5,6,8,9,10,11,12];
-    console.log('tiles', tiles)
+    let tiles = [1,2,3,4,5,6,8,9,10,11,12,13,14,15,16];
+
+    let tiles = []
 
     let sortedTiles = tiles.sort(() => 0.5 - Math.random());
     this.addFountain(sortedTiles)
@@ -13,14 +14,10 @@ class Setup extends Component {
 
   addFountain = (sortedTiles) => {
     let fountainTileLocations = [5,6,9,10]
-    console.log('sortedTiles', sortedTiles)
     
     let fountainLocation = fountainTileLocations.sort(() => 0.5 - Math.random()).pop();
-    console.log('initial', fountainLocation)
-    let boardLayout = sortedTiles.splice(fountainLocation, 0, 7)
-
-    console.log('test', sortedTiles)
-
+    sortedTiles.splice(fountainLocation, 0, 7);
+    this.props.setBoardLayout(sortedTiles)
 
     // function generateRandom(min = 1, max = 100) {
     //   return Math.floor(Math.random() * (1 - 4)) + 4;
