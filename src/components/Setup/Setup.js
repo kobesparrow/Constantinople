@@ -4,9 +4,9 @@ class Setup extends Component {
 
 
   generateBoard = () => {
-    let tiles = [1,2,3,4,5,6,8,9,10,11,12,13,14,15,16];
+    // let tiles = [1,2,3,4,5,6,8,9,10,11,12,13,14,15,16];
 
-    let tiles = []
+    let tiles = [' Wainwright', 'Fabric Warehouse', 'Spice Warehouse', 'Fruit Warehouse', 'Post Office', 'Caravansary', 'Black Market', 'Tea House', 'Large Market', 'Small Market', 'Police Station', `Sultan's Palace`, 'Small Mosque', 'Great Mosque', 'Gemstone Dealer']
 
     let sortedTiles = tiles.sort(() => 0.5 - Math.random());
     this.addFountain(sortedTiles)
@@ -16,13 +16,8 @@ class Setup extends Component {
     let fountainTileLocations = [5,6,9,10]
     
     let fountainLocation = fountainTileLocations.sort(() => 0.5 - Math.random()).pop();
-    sortedTiles.splice(fountainLocation, 0, 7);
+    sortedTiles.splice(fountainLocation, 0, 'Fountain');
     this.props.setBoardLayout(sortedTiles)
-
-    // function generateRandom(min = 1, max = 100) {
-    //   return Math.floor(Math.random() * (1 - 4)) + 4;
-    // } 
-    // let random = 
   }
 
   // checkFountain = (sortedTiles) => {
@@ -32,6 +27,8 @@ class Setup extends Component {
   //   if (fountainLocation === (6 || 7 || 10 || 11)) {
   //     console.log('not an appropriate board');
   //     // this.generateBoard();
+
+
 
   //   } else {
   //     console.log('test is an appropriate board')
