@@ -16,7 +16,7 @@ class Board extends Component {
 
 
     if (this.props.boardLayout.length !== 0) {
-      gameBoard = <div>{ tiles }</div>
+      gameBoard = <section className="tile-section">{ tiles }</section>
     } else {
       gameBoard = <div>Loading...</div>
     }
