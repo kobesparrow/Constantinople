@@ -36,7 +36,7 @@ class Setup extends Component {
     }
 
     if (this.state.mocha && this.state.letters) {
-      tiles= tiles.concat(['Catacombs'])
+      tiles= tiles.concat(['25 — Catacombs'])
     }
 
     if (!this.state.mocha && ! this.state.letters) {
@@ -64,44 +64,35 @@ class Setup extends Component {
 
   //OTHERS LOCATIONS
   setOthersLocations = () => {
-    let max
     let othersLocations
 
     if (this.state.mocha && this.state.letters) {
-      max = 23
       othersLocations = {
-        governor: this.generateRandom(0, max),
-        smuggler: this.generateRandom(0, max),
-        postman: this.generateRandom(0, max),
-        coffeeTrader: this.generateRandom(0, max)
+        governor: this.generateRandom(0, 11),
+        smuggler: this.generateRandom(0, 11),
+        postman: this.generateRandom(0, 11),
+        coffeeTrader: this.generateRandom(0, 11)
       }
     } else if (this.state.mocha) {
-      max = 19
       othersLocations = {
-        governor: this.generateRandom(0, max),
-        smuggler: this.generateRandom(0, max),
-        coffeeTrader: this.generateRandom(0, max)
+        governor: this.generateRandom(0, 11),
+        smuggler: this.generateRandom(0, 11),
+        coffeeTrader: this.generateRandom(0, 11)
       }
     } else if (this.state.letters) {
-      max = 19
       othersLocations = {
-        governor: this.generateRandom(0, max),
-        smuggler: this.generateRandom(0, max),
-        postman: this.generateRandom(0, max)
+        governor: this.generateRandom(0, 11),
+        smuggler: this.generateRandom(0, 11),
+        postman: this.generateRandom(0, 11)
       }
     } else {
-      max = 15
       othersLocations = {
-        governor: this.generateRandom(0, max),
-        smuggler: this.generateRandom(0, max)
+        governor: this.generateRandom(0, 11),
+        smuggler: this.generateRandom(0, 11)
       }
     }
 
     this.props.setOthers(othersLocations)
-
-    console.log('others', othersLocations)
-
-
   }
 
   //BUTTONS

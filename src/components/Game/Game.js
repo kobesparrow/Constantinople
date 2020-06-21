@@ -26,6 +26,19 @@ class Game extends Component {
     this.setState({ others })
   }
 
+  relocateOther = (event) => {
+    let others = {...this.state.others, [event.currentTarget.name]: this.diceRoll() }
+    console.log(others)
+    this.setState({ others })
+  }
+
+  diceRoll = () => {
+    let dieOne = Math.floor(Math.random() * (6 - 1)) + 1;
+    let dieTwo = Math.floor(Math.random() * (6 - 1)) + 1;
+
+    return dieOne + dieTwo
+  }
+
   render() {
     return <div>
       <Setup 
@@ -37,6 +50,8 @@ class Game extends Component {
         boardLayout={ this.state.boardLayout }
         expansion={ this.state.expansion }
         others={ this.state.others }
+        diceRoll={ this.diceRoll }
+        relocateOther={ this.relocateOther }
       />
     </div>
   }

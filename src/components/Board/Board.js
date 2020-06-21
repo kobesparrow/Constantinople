@@ -39,11 +39,10 @@ class Board extends Component {
     return <div>
       <section>
         <div>{ gameBoard }</div>
-        {/* <p>Governor:{ this.props.others.governor }</p> */}
-        {/* { this.props.others.governor && <p>Governor: { this.props.others.governor }</p> }
-        { this.props.others.smuggler && <p>Smuggler: { this.props.others.smuggler }</p> }
-        { this.props.others.postman && <p>Postman: { this.props.others.postman }</p> }
-        { this.props.others.coffeeTrader && <p>Coffee Trader: { this.props.others.coffeeTrader }</p> } */}
+        { this.props.others.governor && <button onClick={ this.props.relocateOther } name="governor">Relocate Governor</button> }
+        { this.props.others.smuggler && <button onClick={ this.props.relocateOther } name="smuggler">Relocate Smuggler</button> }
+        { this.props.others.postman && <button onClick={ this.props.relocateOther } name="postman">Relocate Postman</button> }
+        { this.props.others.coffeeTrader && <button onClick={ this.props.relocateOther } name="coffeeTrader">Relocate Coffee Trader</button> }
       </section>
 
       </div>
