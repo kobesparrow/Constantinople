@@ -13,18 +13,18 @@ class Board extends Component {
       return <Tile tileName={ tile }/>
     })
 
-    let gameBoardStyle
+    let layoutStyle
 
-    if (!this.props.grandBazaar) {
+    if (!this.props.expansion) {
       console.log('tile')
-      gameBoardStyle = 'tile-section'
+      layoutStyle = 'tile-section'
     } else {
       console.log('bazaar')
-      gameBoardStyle = 'grand-bazaar'
+      layoutStyle = 'grand-bazaar'
     }
 
     if (this.props.boardLayout.length !== 0) {
-      gameBoard = <section className={ gameBoardStyle }>{ tiles }</section>
+      gameBoard = <section className={ layoutStyle }>{ tiles }</section>
     } else {
       gameBoard = <div>Loading...</div>
     }
