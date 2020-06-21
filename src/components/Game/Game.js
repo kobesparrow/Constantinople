@@ -8,7 +8,9 @@ class Game extends Component {
 
     this.state = {
       boardLayout: [],
-      expansion: false
+      expansion: false,
+      players: 2,
+      others: {}
     }
   }
 
@@ -16,8 +18,12 @@ class Game extends Component {
     this.setState({ boardLayout })
   }
 
-  setExpansion = () => {
-    this.setState({ expansion: true })
+  setExpansion = (yesOrNo) => {
+    this.setState({ expansion: yesOrNo })
+  }
+
+  setOthers = (others) => {
+    this.setState({ others })
   }
 
   render() {
@@ -25,10 +31,12 @@ class Game extends Component {
       <Setup 
         setBoardLayout={ this.setBoardLayout }
         setExpansion={ this.setExpansion}
+        setOthers={ this.setOthers }
       />
       <Board 
         boardLayout={ this.state.boardLayout }
         expansion={ this.state.expansion }
+        others={ this.state.others }
       />
     </div>
   }

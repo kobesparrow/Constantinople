@@ -30,7 +30,15 @@ class Board extends Component {
     }
 
     return <div>
-        { gameBoard }
+      <section>
+        <div>{ gameBoard }</div>
+        {/* <p>Governor:{ this.props.others.governor }</p> */}
+        { this.props.others.governor && <p>Governor: { this.props.others.governor }</p> }
+        { this.props.others.smuggler && <p>Smuggler: { this.props.others.smuggler }</p> }
+        { this.props.others.postman && <p>Postman: { this.props.others.postman }</p> }
+        { this.props.others.coffeeTrader && <p>Coffee Trader: { this.props.others.coffeeTrader }</p> }
+      </section>
+
       </div>
   }
 }
