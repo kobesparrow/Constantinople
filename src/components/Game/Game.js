@@ -7,7 +7,8 @@ class Game extends Component {
     super()
 
     this.state = {
-      boardLayout: []
+      boardLayout: [],
+      grandBazaar: false
     }
   }
 
@@ -15,13 +16,19 @@ class Game extends Component {
     this.setState({ boardLayout })
   }
 
+  setBazaar = () => {
+    this.setState({ grandBazaar: true })
+  }
+
   render() {
     return <div>
       <Setup 
         setBoardLayout={ this.setBoardLayout }
+        setBazaar={ this.setBazaar }
       />
       <Board 
         boardLayout={ this.state.boardLayout }
+        grandBazaar={ this.state.grandBazaar }
       />
     </div>
   }

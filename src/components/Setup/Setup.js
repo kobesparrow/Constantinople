@@ -25,7 +25,7 @@ class Setup extends Component {
   addExpansions = (tiles) => {
     if (this.state.mocha && this.state.letters) {
       tiles = tiles.concat('Catacombs')
-      this.setState({ grandBazaar: true })
+      this.props.setBazaar()
     }
 
 

@@ -56,6 +56,11 @@ code {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grand-bazaar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .game-tile {
   border: 1px solid black;
   margin: 5px;

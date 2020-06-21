@@ -4,19 +4,27 @@ import Tile from '../Tile/Tile';
 class Board extends Component {
 
 
-  render() {
 
+
+  render() {
+    let gameBoard
 
     const tiles = this.props.boardLayout.map(tile => {
       return <Tile tileName={ tile }/>
     })
 
-    let gameBoard
+    let gameBoardStyle
 
-
+    if (!this.props.grandBazaar) {
+      console.log('tile')
+      gameBoardStyle = 'tile-section'
+    } else {
+      console.log('bazaar')
+      gameBoardStyle = 'grand-bazaar'
+    }
 
     if (this.props.boardLayout.length !== 0) {
-      gameBoard = <section className="tile-section">{ tiles }</section>
+      gameBoard = <section className={ gameBoardStyle }>{ tiles }</section>
     } else {
       gameBoard = <div>Loading...</div>
     }
