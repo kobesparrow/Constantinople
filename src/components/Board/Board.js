@@ -41,10 +41,9 @@ class Board extends Component {
         <div>{ gameBoard }</div>
         { this.props.others.governor && <button onClick={ this.props.relocateOther } name="governor">Relocate Governor</button> }
         { this.props.others.smuggler && <button onClick={ this.props.relocateOther } name="smuggler">Relocate Smuggler</button> }
-        { this.props.others.postman && <button onClick={ this.props.relocateOther } name="postman">Relocate Postman</button> }
+        { this.props.others.courier && <button onClick={ this.props.relocateOther } name="courier">Relocate Courier</button> }
         { this.props.others.coffeeTrader && <button onClick={ this.props.relocateOther } name="coffeeTrader">Relocate Coffee Trader</button> }
       </section>
-
       </div>
   }
 }

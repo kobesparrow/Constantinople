@@ -68,27 +68,27 @@ class Setup extends Component {
 
     if (this.state.mocha && this.state.letters) {
       othersLocations = {
-        governor: this.generateRandom(0, 11),
-        smuggler: this.generateRandom(0, 11),
-        postman: this.generateRandom(0, 11),
-        coffeeTrader: this.generateRandom(0, 11)
+        governor: this.props.diceRoll(),
+        smuggler: this.props.diceRoll(),
+        courier: this.props.diceRoll(),
+        coffeeTrader: this.props.diceRoll()
       }
     } else if (this.state.mocha) {
       othersLocations = {
-        governor: this.generateRandom(0, 11),
-        smuggler: this.generateRandom(0, 11),
-        coffeeTrader: this.generateRandom(0, 11)
+        governor: this.props.diceRoll(),
+        smuggler: this.props.diceRoll(),
+        coffeeTrader: this.props.diceRoll()
       }
     } else if (this.state.letters) {
       othersLocations = {
-        governor: this.generateRandom(0, 11),
-        smuggler: this.generateRandom(0, 11),
-        postman: this.generateRandom(0, 11)
+        governor: this.props.diceRoll(),
+        smuggler: this.props.diceRoll(),
+        courier: this.props.diceRoll()
       }
     } else {
       othersLocations = {
-        governor: this.generateRandom(0, 11),
-        smuggler: this.generateRandom(0, 11)
+        governor: this.props.diceRoll(),
+        smuggler: this.props.diceRoll()
       }
     }
 

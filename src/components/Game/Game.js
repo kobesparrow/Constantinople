@@ -45,6 +45,7 @@ class Game extends Component {
         setBoardLayout={ this.setBoardLayout }
         setExpansion={ this.setExpansion}
         setOthers={ this.setOthers }
+        diceRoll={ this.diceRoll }
       />
       <Board 
         boardLayout={ this.state.boardLayout }
