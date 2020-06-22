@@ -9,7 +9,7 @@ class Setup extends Component {
       letters: false,
       grandBazaar: false,
       othersLocations: {},
-      players: {}
+      players: []
     }
   }
 
@@ -104,20 +104,13 @@ class Setup extends Component {
   }
 
   adjustPlayers = (event) => {
-    let status
-    if (this.state.players[event.currentTarget.id]) {
-      status = false
-    } else {
-      status = true
-    }
-
+    let status = this.state.players[event.currentTarget.id] ? false : true
     let players = {...this.state.players, [event.currentTarget.id]: status }
     this.setState({ players })
   }
 
 
   //HELPER FUNCTIONS
-
   // generateRandom = (min, max) => {
   //   return Math.floor(Math.random() * (max - min)) + min;
   // }

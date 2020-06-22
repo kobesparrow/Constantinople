@@ -55,9 +55,9 @@ class Game extends Component {
   }
 
   setFirstPlayer = (players) => {
-    let firstPlayer = 
-    let updatedPlayers = {...players, }
-    console.log(updatedPlayers)
+    // let firstPlayer = 
+    // let updatedPlayers = {...players, }
+    // console.log(updatedPlayers)
   }
 
 
