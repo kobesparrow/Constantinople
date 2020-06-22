@@ -43,9 +43,8 @@ class Game extends Component {
         players.push(this.instantiatePlayer(color))
       }
     })
-    players = players.sort(() => 0.5 - Math.random());
+    players = this.setFirstPlayer(players)
     this.setState({ players })
-    console.log(players)
   }
 
   instantiatePlayer = (color) => {
@@ -53,6 +52,12 @@ class Game extends Component {
       color: color,
       turn: false
     }
+  }
+
+  setFirstPlayer = (players) => {
+    let firstPlayer = 
+    let updatedPlayers = {...players, }
+    console.log(updatedPlayers)
   }
 
 
