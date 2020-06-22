@@ -1,0 +1,10 @@
+
+.tile-section-basic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tile-section-expansion {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}

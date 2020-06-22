@@ -13,21 +13,16 @@ class Board extends Component {
       return  <Tile 
                 tileName={ tile }
                 others={ this.props.others }
-                // key={index}
                 tileNumber={ index }
-                // id={ tile.index }
-                // key={ tile.index }
               />
     })
 
     let layoutStyle
 
     if (!this.props.expansion) {
-      console.log('tile')
-      layoutStyle = 'tile-section'
+      layoutStyle = 'tile-section-basic'
     } else {
-      console.log('bazaar')
-      layoutStyle = 'grand-bazaar'
+      layoutStyle = 'tile-section-expansion'
     }
 
     if (this.props.boardLayout.length !== 0) {

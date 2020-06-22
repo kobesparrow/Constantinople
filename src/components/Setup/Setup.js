@@ -8,7 +8,8 @@ class Setup extends Component {
       mocha: false,
       letters: false,
       grandBazaar: false,
-      othersLocations: {}
+      othersLocations: {},
+      players: {}
     }
   }
 
@@ -22,6 +23,7 @@ class Setup extends Component {
     let sortedTiles = tiles.sort(() => 0.5 - Math.random());
     this.addFountain(sortedTiles)
     this.setOthersLocations()
+    this.props.setPlayers(this.state.players)
   }
 
   addExpansions = (tiles) => {
@@ -101,28 +103,42 @@ class Setup extends Component {
     this.setState({ [event.target.id]: !this.state[event.target.id] })
   }
 
+  adjustPlayers = (event) => {
+    let status
+    if (this.state.players[event.currentTarget.id]) {
+      status = false
+    } else {
+      status = true
+    }
+
+    let players = {...this.state.players, [event.currentTarget.id]: status }
+    this.setState({ players })
+  }
+
 
   //HELPER FUNCTIONS
 
-  generateRandom = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  
-
-
+  // generateRandom = (min, max) => {
+  //   return Math.floor(Math.random() * (max - min)) + min;
+  // }
 
   render() {
     return <div>
         <section>
           <form>
-            {/* <div>
+            <div>
               <p>Players:</p>
-              <button>Two</button>
-              <button>Three</button>
-              <button>Four</button>
-              <button>Five</button>
-            </div> */}
+              <input type="checkbox" id="yellow" name="player" onClick={ this.adjustPlayers } />
+              <label for="yellow">Yellow</label>
+              <input type="checkbox" id="green" name="player" onClick={ this.adjustPlayers } />
+              <label for="green">Green</label>
+              <input type="checkbox" id="red" name="player" onClick={ this.adjustPlayers } />
+              <label for="red">Red</label>
+              <input type="checkbox" id="white" name="player" onClick={ this.adjustPlayers } />
+              <label for="white">White</label>
+              <input type="checkbox" id="blue" name="player" onClick={ this.adjustPlayers } />
+              <label for="blue">Blue</label>
+            </div>
             <div>
               <p>Add Expansions:</p>
               <input type="checkbox" id="mocha" name="expansion" onClick={ this.adjustExpansionSelection } />
