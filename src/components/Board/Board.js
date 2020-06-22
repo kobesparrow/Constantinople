@@ -10,10 +10,12 @@ class Board extends Component {
     let gameBoard
 
     const tiles = this.props.boardLayout.map((tile, index) => {
+      console.log('tileName', tile)
       return  <Tile 
                 tileName={ tile }
                 others={ this.props.others }
                 tileNumber={ index }
+                players={ this.props.players }
               />
     })
 

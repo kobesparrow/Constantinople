@@ -1,10 +1,11 @@
 import React from 'react';
 
-const PlayerCart = (props) => {
+const PlayerCart = ({ playerInfo, lira }) => {
   
   return <div className="player-cart">
-      <p>{props.playerInfo.color}</p>
-      <p>{props.lira} Lira</p>
+      <p>{ playerInfo.turn && `First Player:` } </p>
+      <p>{ playerInfo.color }</p>
+      <p>{ lira } Lira</p>
     </div>
 }
 

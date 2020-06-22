@@ -11,8 +11,8 @@ const Tile = (props) => {
       { (props.others.coffeeTrader === props.tileNumber) && <div className="coffee-trader"></div> }
     </div>
     <div className="players-space">
-      {/* { (props.others.governor === props.tileNumber) && <div className="governor"></div> }
-      { (props.others.smuggler === props.tileNumber) && <div className="smuggler"></div> }
+      { (props.others.governor === props.tileNumber) && <div className="white-player"></div> }
+      {/* { (props.others.smuggler === props.tileNumber) && <div className="smuggler"></div> }
       { (props.others.courier === props.tileNumber) && <div className="courier"></div> }
       { (props.others.coffeeTrader === props.tileNumber) && <div className="coffee-trader"></div> } */}
     </div>
