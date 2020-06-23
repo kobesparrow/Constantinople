@@ -64,7 +64,6 @@ class Setup extends Component {
     
     let fountainLocation = fountainTileLocations.sort(() => 0.5 - Math.random()).pop();
     sortedTiles.splice(fountainLocation, 0, Constantinople.tiles.fountain[0]);
-    console.log('sortedTiles', sortedTiles)
     this.props.setBoardLayout(sortedTiles)
   }
 
