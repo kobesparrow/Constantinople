@@ -51,7 +51,7 @@ class Game extends Component {
     return {
       color: color,
       turn: false,
-      tile: 'fountain',
+      tile: 7,
       assistants: 4
     }
   }

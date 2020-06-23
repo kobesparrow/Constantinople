@@ -2,13 +2,16 @@
   border: 1px solid black;
   margin: 5px;
   padding: 15px;
-  height: 55px;
+  height: 75px;
 }
 
+// OTHERS
 .others-space {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 25px;
+
 }
 
 .governor {
@@ -41,4 +44,58 @@
   background-color: brown;
   border-radius: 50px;
   margin: 10px;
+}
+
+// PLAYERS
+
+.players-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 25px;
+}
+
+.green-player {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50px;
+  margin: 10px;
+  border: .25px solid black;
+}
+
+.yellow-player {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50px;
+  margin: 10px;
+  border: .25px solid black;
+}
+
+.red-player {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50px;
+  margin: 10px;
+  border: .25px solid black;
+}
+
+.blue-player {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50px;
+  margin: 10px;
+  border: .25px solid black;
+}
+
+.white-player {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50px;
+  margin: 10px;
+  border: .25px solid black;
 }

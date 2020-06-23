@@ -2,6 +2,10 @@ import React from 'react';
 
 const Tile = (props) => {
 
+  let players = props.players.map((player, index) => {
+    return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} ></div>
+  })
+
   return <div className="game-tile">
     <div>{ props.tileNumber } — { props.tileName }</div>
     <div className="others-space">
@@ -11,12 +15,8 @@ const Tile = (props) => {
       { (props.others.coffeeTrader === props.tileNumber) && <div className="coffee-trader"></div> }
     </div>
     <div className="players-space">
-      { (props.others.governor === props.tileNumber) && <div className="white-player"></div> }
-      {/* { (props.others.smuggler === props.tileNumber) && <div className="smuggler"></div> }
-      { (props.others.courier === props.tileNumber) && <div className="courier"></div> }
-      { (props.others.coffeeTrader === props.tileNumber) && <div className="coffee-trader"></div> } */}
+      { players }
     </div>
-    {/* <div className="governor"></div> */}
   </div>
 }
 
