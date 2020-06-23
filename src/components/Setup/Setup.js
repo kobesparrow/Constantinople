@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Constantinople from '../../data-set';
 
 class Setup extends Component {
   constructor() {
@@ -16,7 +17,10 @@ class Setup extends Component {
   //BOARD SETUP
 
   generateBoard = () => {
-    let tiles = [' 1 — Wainwright', '2 — Fabric Warehouse', '3 — Spice Warehouse', '4 — Fruit Warehouse', '5 — Post Office', '6 — Caravansary', '8 — Black Market', '9 — Tea House', '10 — Large Market', '11 — Small Market', '12 — Police Station', ` 13 — Sultan's Palace`, '14 — Small Mosque', '15 — Great Mosque', '16 — Gemstone Dealer']
+    console.log(Constantinople)
+
+
+    let tiles = Constantinople.tiles.base
 
     tiles = this.addExpansions(tiles)
     
@@ -28,17 +32,17 @@ class Setup extends Component {
 
   addExpansions = (tiles) => {
     if (this.state.mocha) {
-      tiles = tiles.concat(['17 — Roasting Plant', '19 — Tavern', '20 — Coffee House', '18 — Guild Hall'])
+      tiles = tiles.concat(Constantinople.tiles.mocha)
       this.props.setExpansion(true)
     }
 
     if (this.state.letters) {
-      tiles = tiles.concat(['22 — Kiosk', '23 — Auction House', '24 — Secret Society', '21 — Embassy'])
+      tiles = tiles.concat(Constantinople.tiles.letters)
       this.props.setExpansion(true)
     }
 
     if (this.state.mocha && this.state.letters) {
-      tiles= tiles.concat(['25 — Catacombs'])
+      tiles= tiles.concat(Constantinople.tiles.special)
     }
 
     if (!this.state.mocha && ! this.state.letters) {
@@ -60,7 +64,7 @@ class Setup extends Component {
     }
     
     let fountainLocation = fountainTileLocations.sort(() => 0.5 - Math.random()).pop();
-    sortedTiles.splice(fountainLocation, 0, 'Fountain');
+    sortedTiles.splice(fountainLocation, 0, Constantinople.tiles.fountain[0]);
     this.props.setBoardLayout(sortedTiles)
   }
 
@@ -122,7 +126,7 @@ class Setup extends Component {
             <div>
               <p>Players:</p>
               <input type="checkbox" id="yellow" name="player" onClick={ this.adjustPlayers } />
-              <label for="yellow">Yellow</label>
+              <label htmlFor="yellow">Yellow</label>
               <input type="checkbox" id="green" name="player" onClick={ this.adjustPlayers } />
               <label for="green">Green</label>
               <input type="checkbox" id="red" name="player" onClick={ this.adjustPlayers } />

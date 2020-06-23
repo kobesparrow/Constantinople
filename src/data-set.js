@@ -55,7 +55,11 @@ let Constantinople = {
     fountain: [
       { number: 7,
         name: 'Fountain'}
+    ],
+    special: [
+      { number: 25,
+        name: 'Catacombs'}
     ]}
 }
 
-export deftaul Constantinople;
+export default Constantinople;
