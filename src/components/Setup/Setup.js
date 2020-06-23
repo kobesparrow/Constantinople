@@ -17,10 +17,9 @@ class Setup extends Component {
   //BOARD SETUP
 
   generateBoard = () => {
-    console.log(Constantinople)
-
-
     let tiles = Constantinople.tiles.base
+    
+    console.log(tiles)
 
     tiles = this.addExpansions(tiles)
     
@@ -54,7 +53,7 @@ class Setup extends Component {
 
   addFountain = (sortedTiles) => {
     let fountainTileLocations
-
+    
     if (this.state.mocha && this.state.letters) {
       fountainTileLocations = [12]
     } else if (this.state.mocha || this.state.letters) {
@@ -65,6 +64,7 @@ class Setup extends Component {
     
     let fountainLocation = fountainTileLocations.sort(() => 0.5 - Math.random()).pop();
     sortedTiles.splice(fountainLocation, 0, Constantinople.tiles.fountain[0]);
+    console.log('sortedTiles', sortedTiles)
     this.props.setBoardLayout(sortedTiles)
   }
 
