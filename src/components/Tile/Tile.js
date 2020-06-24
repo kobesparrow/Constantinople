@@ -5,12 +5,10 @@ const Tile = (props) => {
   let tileNumber = props.tileNumber
 
   let players = props.players.map((player, index) => {
-    return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} ></div>
+  return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} >{player.assistants.length}</div>
   })
 
   let assistants = props.players.map((player, index) => {
-    console.log(player, "tileNum", tileNumber)
-
     return props.players[index].assistants.includes(tileNumber) && <div className={`${player.color}-assistant`} ></div>
   })
 
@@ -32,6 +30,4 @@ const Tile = (props) => {
   </button>
 }
 
-export default Tile
-
-// [green, red, white]
+export default Tile;

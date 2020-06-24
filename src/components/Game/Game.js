@@ -49,11 +49,10 @@ class Game extends Component {
   }
 
   instantiatePlayer = (color) => {
-    console.log('player test')
     return {
       color: color,
       tile: 7,
-      assistants: [7, 7, 8, 10]
+      assistants: [null, null, null, null]
     }
   }
 
@@ -63,10 +62,12 @@ class Game extends Component {
   }
 
   movePlayer = (moveTo) => {
+    let updatedAssistants = this.assistantCheck(moveTo)
+    console.log('test please', updatedAssistants)
     let updatedPlayer = {
       ...this.state.currentPlayer, 
       tile: moveTo, 
-      assistants: this.state.currentPlayer.assistants - 1 }
+      assistants: updatedAssistants }
 
     let players = this.state.players
     players.push(updatedPlayer)
@@ -74,6 +75,29 @@ class Game extends Component {
     this.setState({ players, currentPlayer: players[0]})
   }
 
+  //ASSISTANTS
+  assistantCheck = (moveTo) => {
+    let assistants = this.state.currentPlayer.assistants
+    if (!assistants.includes(moveTo)) {
+      return assistants.reduce((acc, assistant) => {
+        if (!acc.includes(moveTo) && assistant === null) {
+          acc.push(moveTo)
+        } else {
+          acc.push(assistant)
+        }
+        return acc;
+      }, [])
+    } else {
+      return assistants.reduce((acc, tileNumber) => {
+        if (moveTo === tileNumber) {
+          acc.push(null)
+        } else {
+          acc.push(tileNumber)
+        }
+        return acc;
+      }, [])
+    }
+  }
 
   //HELPER FUNCTIONS
   diceRoll = () => {
