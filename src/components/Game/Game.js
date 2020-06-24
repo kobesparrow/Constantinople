@@ -79,6 +79,7 @@ class Game extends Component {
   assistantCheck = (moveTo) => {
     let assistants = this.state.currentPlayer.assistants
     if (!assistants.includes(moveTo)) {
+      //might want to break this out into its own func called dropOffAssistant
       return assistants.reduce((acc, assistant) => {
         if (!acc.includes(moveTo) && assistant === null) {
           acc.push(moveTo)
@@ -88,6 +89,7 @@ class Game extends Component {
         return acc;
       }, [])
     } else {
+      //might want to break this out into its own func called pickUpAssistant
       return assistants.reduce((acc, tileNumber) => {
         if (moveTo === tileNumber) {
           acc.push(null)

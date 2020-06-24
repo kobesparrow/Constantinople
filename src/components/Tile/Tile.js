@@ -4,8 +4,15 @@ const Tile = (props) => {
 
   let tileNumber = props.tileNumber
 
+  //FUNCTIONS
+  const calculateAssistants = (assistants) => {
+    return assistants.filter(assistant => assistant === null).length
+  }
+
+
+  //ELEMENT CREATORS
   let players = props.players.map((player, index) => {
-  return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} >{player.assistants.length}</div>
+  return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} >{ calculateAssistants(player.assistants) }</div>
   })
 
   let assistants = props.players.map((player, index) => {
