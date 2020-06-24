@@ -7,6 +7,7 @@ const Players = ({ players }) => {
     return  <PlayerCart 
               playerInfo={ player } 
               lira={index+2} 
+              key={ index }
             />
   })
 

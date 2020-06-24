@@ -12,11 +12,11 @@ const Tile = (props) => {
 
   //ELEMENT CREATORS
   let players = props.players.map((player, index) => {
-  return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} >{ calculateAssistants(player.assistants) }</div>
+  return player.tile === props.tileNumber && <div className={ `${player.color}-player` } key={ index } >{ calculateAssistants(player.assistants) }</div>
   })
 
   let assistants = props.players.map((player, index) => {
-    return props.players[index].assistants.includes(tileNumber) && <div className={`${player.color}-assistant`} ></div>
+    return player.assistants.includes(tileNumber) && <div className={ `${player.color}-assistant` } key={ index } ></div>
   })
 
 

@@ -18,8 +18,6 @@ class Setup extends Component {
 
   generateBoard = () => {
     let tiles = Constantinople.tiles.base
-    
-    console.log(tiles)
 
     tiles = this.addExpansions(tiles)
     
@@ -127,20 +125,20 @@ class Setup extends Component {
               <input type="checkbox" id="yellow" name="player" onClick={ this.adjustPlayers } />
               <label htmlFor="yellow">Yellow</label>
               <input type="checkbox" id="green" name="player" onClick={ this.adjustPlayers } />
-              <label for="green">Green</label>
+              <label htmlFor="green">Green</label>
               <input type="checkbox" id="red" name="player" onClick={ this.adjustPlayers } />
-              <label for="red">Red</label>
+              <label htmlFor="red">Red</label>
               <input type="checkbox" id="white" name="player" onClick={ this.adjustPlayers } />
-              <label for="white">White</label>
+              <label htmlFor="white">White</label>
               <input type="checkbox" id="blue" name="player" onClick={ this.adjustPlayers } />
-              <label for="blue">Blue</label>
+              <label htmlFor="blue">Blue</label>
             </div>
             <div>
               <p>Add Expansions:</p>
               <input type="checkbox" id="mocha" name="expansion" onClick={ this.adjustExpansionSelection } />
-              <label for="mocha">Mocha and Baksheesh</label>
+              <label htmlFor="mocha">Mocha and Baksheesh</label>
               <input type="checkbox" id="letters" name="expansion" onClick={ this.adjustExpansionSelection } />
-              <label for="letters">Seals and Letters</label>
+              <label htmlFor="letters">Seals and Letters</label>
             </div>  
           </form>
         </section>

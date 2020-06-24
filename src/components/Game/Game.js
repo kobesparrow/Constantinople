@@ -63,7 +63,6 @@ class Game extends Component {
 
   movePlayer = (moveTo) => {
     let updatedAssistants = this.assistantCheck(moveTo)
-    console.log('test please', updatedAssistants)
     let updatedPlayer = {
       ...this.state.currentPlayer, 
       tile: moveTo, 
