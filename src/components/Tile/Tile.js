@@ -2,11 +2,18 @@ import React from 'react';
 
 const Tile = (props) => {
 
+  let tileNumber = props.tileNumber
+
   let players = props.players.map((player, index) => {
     return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} ></div>
   })
 
-  let tileNumber = props.tileNumber
+  let assistants = props.players.map((player, index) => {
+    console.log(player, "tileNum", tileNumber)
+
+    return props.players[index].assistants.includes(tileNumber) && <div className={`${player.color}-assistant`} ></div>
+  })
+
 
   return <button onClick={ () => props.movePlayer(tileNumber) } className="game-tile">
     <div>{ props.tileNumber } — { props.tileName }</div>
@@ -18,6 +25,9 @@ const Tile = (props) => {
     </div>
     <div className="players-space">
       { players }
+    </div>
+    <div className="assistants-space">
+      { assistants }
     </div>
   </button>
 }

@@ -49,10 +49,11 @@ class Game extends Component {
   }
 
   instantiatePlayer = (color) => {
+    console.log('player test')
     return {
       color: color,
       tile: 7,
-      assistants: 4
+      assistants: [7, 7, 8, 10]
     }
   }
 
@@ -71,17 +72,6 @@ class Game extends Component {
     players.push(updatedPlayer)
     players.shift()
     this.setState({ players, currentPlayer: players[0]})
-    // players = players.shift()
-    
-    console.log('players', players)
-    // players = players.push(updatedPlayer).shift()
-
-    // this.setState({ players, currentPlayer: players[0] })
-    
-    // let players = {...this.state.players, updatedPlayer }
-    // console.log(players)
-
-    // this.setState({ currentPlayer })
   }
 
 

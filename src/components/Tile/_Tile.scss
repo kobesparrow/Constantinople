@@ -2,7 +2,7 @@
   border: 1px solid black;
   margin: 5px;
   padding: 15px;
-  height: 100px;
+  height: 125px;
 }
 
 // OTHERS
@@ -94,8 +94,62 @@
 .white-player {
   width: 20px;
   height: 20px;
+  // background-color: white;
+  border-radius: 50px;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+// ASSISTANTS
+
+.assistants-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 25px;
+}
+
+.green-assistant {
+  width: 20px;
+  height: 20px;
+  // background-color: green;
+  border-radius: 50px;
+  margin: 10px;
+  border: 1px solid green;
+}
+
+.yellow-assistant {
+  width: 20px;
+  height: 20px;
+  // background-color: yellow;
+  border-radius: 50px;
+  margin: 10px;
+  border: 1px solid yellow;
+}
+
+.red-assistant {
+  width: 20px;
+  height: 20px;
+  // background-color: red;
+  border-radius: 50px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+.blue-assistant {
+  width: 20px;
+  height: 20px;
+  // background-color: blue;
+  border-radius: 50px;
+  margin: 10px;
+  border: 1px solid blue;
+}
+
+.white-assistant {
+  width: 20px;
+  height: 20px;
   background-color: white;
   border-radius: 50px;
   margin: 10px;
-  border: .25px solid black;
+  border: 1px solid black;
 }
