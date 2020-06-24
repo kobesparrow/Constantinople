@@ -12,7 +12,8 @@ class Game extends Component {
       expansion: false,
       players: 2,
       others: {},
-      players: []
+      players: [],
+      currentPlayer: {}
     }
   }
 
@@ -44,13 +45,12 @@ class Game extends Component {
       }
     })
     this.setFirstPlayer(players)
-    this.setState({ players })
+    this.setState({ players, currentPlayer: players[0] })
   }
 
   instantiatePlayer = (color) => {
     return {
       color: color,
-      turn: false,
       tile: 7,
       assistants: 4
     }
@@ -59,6 +59,29 @@ class Game extends Component {
   setFirstPlayer = (players) => {
     players[0] = {...players[0], turn: true}
     this.setState({ players })
+  }
+
+  movePlayer = (moveTo) => {
+    let updatedPlayer = {
+      ...this.state.currentPlayer, 
+      tile: moveTo, 
+      assistants: this.state.currentPlayer.assistants - 1 }
+
+    let players = this.state.players
+    players.push(updatedPlayer)
+    players.shift()
+    this.setState({ players, currentPlayer: players[0]})
+    // players = players.shift()
+    
+    console.log('players', players)
+    // players = players.push(updatedPlayer).shift()
+
+    // this.setState({ players, currentPlayer: players[0] })
+    
+    // let players = {...this.state.players, updatedPlayer }
+    // console.log(players)
+
+    // this.setState({ currentPlayer })
   }
 
 
@@ -86,6 +109,7 @@ class Game extends Component {
         diceRoll={ this.diceRoll }
         relocateOther={ this.relocateOther }
         players={ this.state.players }
+        movePlayer={ this.movePlayer }
       />
       <Players 
         players={ this.state.players }

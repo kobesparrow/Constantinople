@@ -4,8 +4,6 @@ import Tile from '../Tile/Tile';
 class Board extends Component {
 
 
-
-
   render() {
     let gameBoard
 
@@ -15,6 +13,7 @@ class Board extends Component {
                 others={ this.props.others }
                 tileNumber={ tile.number }
                 players={ this.props.players }
+                movePlayer={ this.props.movePlayer }
               />
     })
 

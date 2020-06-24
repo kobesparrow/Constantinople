@@ -6,7 +6,9 @@ const Tile = (props) => {
     return props.players[index].tile === props.tileNumber && <div className={`${player.color}-player`} ></div>
   })
 
-  return <div className="game-tile">
+  let tileNumber = props.tileNumber
+
+  return <button onClick={ () => props.movePlayer(tileNumber) } className="game-tile">
     <div>{ props.tileNumber } — { props.tileName }</div>
     <div className="others-space">
       { (props.others.governor === props.tileNumber) && <div className="governor"></div> }
@@ -17,7 +19,9 @@ const Tile = (props) => {
     <div className="players-space">
       { players }
     </div>
-  </div>
+  </button>
 }
 
 export default Tile
+
+// [green, red, white]
