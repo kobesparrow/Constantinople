@@ -4,17 +4,17 @@ import Tile from '../Tile/Tile';
 class Board extends Component {
 
 
-
-
   render() {
     let gameBoard
 
-    const tiles = this.props.boardLayout.map(tile => {
+    const tiles = this.props.boardLayout.map((tile, index) => {
       return  <Tile 
                 tileName={ tile.name }
                 others={ this.props.others }
                 tileNumber={ tile.number }
                 players={ this.props.players }
+                movePlayer={ this.props.movePlayer }
+                key={ index }
               />
     })
 

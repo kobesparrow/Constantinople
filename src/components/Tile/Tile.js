@@ -2,7 +2,25 @@ import React from 'react';
 
 const Tile = (props) => {
 
-  return <div className="game-tile">
+  let tileNumber = props.tileNumber
+
+  //FUNCTIONS
+  const calculateAssistants = (assistants) => {
+    return assistants.filter(assistant => assistant === null).length
+  }
+
+
+  //ELEMENT CREATORS
+  let players = props.players.map((player, index) => {
+  return player.tile === props.tileNumber && <div className={ `${player.color}-player` } key={ index } >{ calculateAssistants(player.assistants) }</div>
+  })
+
+  let assistants = props.players.map((player, index) => {
+    return player.assistants.includes(tileNumber) && <div className={ `${player.color}-assistant` } key={ index } ></div>
+  })
+
+
+  return <button onClick={ () => props.movePlayer(tileNumber) } className="game-tile">
     <div>{ props.tileNumber } — { props.tileName }</div>
     <div className="others-space">
       { (props.others.governor === props.tileNumber) && <div className="governor"></div> }
@@ -11,13 +29,12 @@ const Tile = (props) => {
       { (props.others.coffeeTrader === props.tileNumber) && <div className="coffee-trader"></div> }
     </div>
     <div className="players-space">
-      { (props.others.governor === props.tileNumber) && <div className="white-player"></div> }
-      {/* { (props.others.smuggler === props.tileNumber) && <div className="smuggler"></div> }
-      { (props.others.courier === props.tileNumber) && <div className="courier"></div> }
-      { (props.others.coffeeTrader === props.tileNumber) && <div className="coffee-trader"></div> } */}
+      { players }
     </div>
-    {/* <div className="governor"></div> */}
-  </div>
+    <div className="assistants-space">
+      { assistants }
+    </div>
+  </button>
 }
 
-export default Tile
+export default Tile;
