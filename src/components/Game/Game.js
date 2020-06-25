@@ -72,8 +72,20 @@ class Game extends Component {
     let playerToReplace = this.state.players.findIndex(player => player.color === updatedPlayer.color);
     let players = this.state.players
     players[playerToReplace] = updatedPlayer
+    let currentPlayer = this.setNextPlayer(playerToReplace)
     
-    this.setState({ players })
+    this.setState({ players, currentPlayer })
+  }
+
+  setNextPlayer = (currentIndex) => {
+    let nextIndex
+    if (currentIndex + 1 === this.state.players.length) {
+      nextIndex = 0
+    } else {
+      nextIndex = currentIndex + 1
+    }
+    
+    return this.state.players[nextIndex]
   }
 
   //ASSISTANTS
