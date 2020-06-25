@@ -10,16 +10,17 @@ class Game extends Component {
     this.state = {
       boardLayout: [],
       expansion: false,
-      players: 2,
+      // players: 2,
       others: {},
       players: [],
-      currentPlayer: {}
+      currentPlayer: {},
+      displaySetup: true
     }
   }
 
   //BOARD LAYOUT
   setBoardLayout = (boardLayout) => {
-    this.setState({ boardLayout })
+    this.setState({ boardLayout, displaySetup: false })
   }
 
   setExpansion = (yesOrNo) => {
@@ -44,7 +45,7 @@ class Game extends Component {
         players.push(this.instantiatePlayer(color))
       }
     })
-    this.setFirstPlayer(players)
+    // this.setFirstPlayer(players)
     this.setState({ players, currentPlayer: players[0] })
   }
 
@@ -56,10 +57,10 @@ class Game extends Component {
     }
   }
 
-  setFirstPlayer = (players) => {
-    players[0] = {...players[0], turn: true}
-    this.setState({ players })
-  }
+  // setFirstPlayer = (players) => {
+  //   players[0] = {...players[0], turn: true}
+  //   this.setState({ players })
+  // }
 
   movePlayer = (moveTo) => {
     let updatedAssistants = this.assistantCheck(moveTo)
@@ -68,10 +69,11 @@ class Game extends Component {
       tile: moveTo, 
       assistants: updatedAssistants }
 
+    let playerToReplace = this.state.players.findIndex(player => player.color === updatedPlayer.color);
     let players = this.state.players
-    players.push(updatedPlayer)
-    players.shift()
-    this.setState({ players, currentPlayer: players[0]})
+    players[playerToReplace] = updatedPlayer
+    
+    this.setState({ players })
   }
 
   //ASSISTANTS
@@ -109,8 +111,39 @@ class Game extends Component {
   }
 
   render() {
+    let gameArea
+
+    if (this.state.displaySetup) {
+      gameArea = <div>
+          <Setup 
+            setBoardLayout={ this.setBoardLayout }
+            setExpansion={ this.setExpansion}
+            setOthers={ this.setOthers }
+            diceRoll={ this.diceRoll }
+            setPlayers={ this.setPlayers }
+          />
+        </div>
+    } else {
+      gameArea = <div>
+          <Board 
+            boardLayout={ this.state.boardLayout }
+            expansion={ this.state.expansion }
+            others={ this.state.others }
+            diceRoll={ this.diceRoll }
+            relocateOther={ this.relocateOther }
+            players={ this.state.players }
+            movePlayer={ this.movePlayer }
+          />
+          <Players 
+            players={ this.state.players }
+            currentPlayer={ this.state.currentPlayer }
+          />
+        </div>
+    }
+
     return <div>
-      <Setup 
+      { gameArea }
+      {/* <Setup 
         setBoardLayout={ this.setBoardLayout }
         setExpansion={ this.setExpansion}
         setOthers={ this.setOthers }
@@ -128,7 +161,7 @@ class Game extends Component {
       />
       <Players 
         players={ this.state.players }
-      />
+      /> */}
     </div>
   }
 }
