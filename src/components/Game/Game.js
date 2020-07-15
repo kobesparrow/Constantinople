@@ -53,7 +53,8 @@ class Game extends Component {
     return {
       color: color,
       tile: 7,
-      assistants: [null, null, null, null]
+      assistants: [null, null, null, null],
+      wheelbarrowExtensions: 0
     }
   }
 

@@ -10,6 +10,7 @@ const Players = ({ players, currentPlayer }) => {
               lira={index+2} 
               key={ index }
               currentPlayerColor={ currentPlayer.color }
+              wheelbarrowExtensions={ currentPlayer.wheelbarrowExtensions }
             />
   })
 
