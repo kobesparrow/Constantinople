@@ -12,6 +12,18 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor }) => {
       <p>{ playerInfo.turn && `First Player:` } </p>
       <p>{ playerInfo.color }</p>
       <p>{ lira } Lira</p>
+      <div className="player-gems">
+        <div></div><div></div><div></div>
+      </div>
+      <div className="player-fabric">
+        <div></div><div></div><div></div>
+      </div>
+      <div className="player-spices">
+        <div></div><div></div><div></div>
+      </div>
+      <div className="player-fruits">
+        <div></div><div></div><div></div>
+      </div>
     </div>
 }
 
