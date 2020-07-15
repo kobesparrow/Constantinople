@@ -8,6 +8,14 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
     }
   }
 
+  const wheelbarrowParts = () => {
+    const goods = ['blue', 'red', 'green', 'yellow'];
+
+    return goods.map(good => {
+      return <div className={`player-${good}-goods`}><div></div></div>
+    })
+  }
+
   // const addWheelbarrowExtensions = () => {
   //   switch (wheelbarrowExtensions) {
   //     case 1:
@@ -23,7 +31,7 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
 
   const addWheelbarrowExtensions = {
     //some kind of repeat prototype within a div
-    0: <div></div>
+    0: <div></div>,
     1: <div></div>,
     2: <div><div></div><div></div></div>,
     3: <div><div></div><div></div></div>
@@ -35,7 +43,8 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
       <p>{ playerInfo.turn && `First Player:` } </p>
       <p>{ playerInfo.color }</p>
       <p>{ lira } Lira</p>
-      <div className="player-blue-goods">
+      { wheelbarrowParts() }
+      {/* <div className="player-blue-goods">
         <div><div></div><div></div><div></div>{ addWheelbarrowExtensions.wheelbarrowExtensions }</div>
       </div>
       <div className="player-red-goods">
@@ -46,7 +55,7 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
       </div>
       <div className="player-yellow-goods">
         <div></div><div></div><div></div>
-      </div>
+      </div> */}
     </div>
 }
 
