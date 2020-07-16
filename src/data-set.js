@@ -1,8 +1,13 @@
+const wainrightAction = () => {
+  console.log('this is the test wainright action')
+}
+
 let Constantinople = {
   tiles: {
     base: [
       { number: 1,
-        name: 'Wainwright'},
+        name: 'Wainwright',
+        action: wainrightAction},
       { number: 2,
         name: 'Fabric Warehouse'},
       { number: 3,
