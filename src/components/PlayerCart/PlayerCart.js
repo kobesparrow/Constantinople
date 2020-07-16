@@ -9,10 +9,16 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
   }
 
   const wheelbarrowParts = () => {
-    const goods = ['blue', 'red', 'green', 'yellow'];
+    const goodColors = ['blue', 'red', 'green', 'yellow'];
+    let goods = [<div></div>, <div></div>, <div></div>]
 
-    return goods.map(good => {
-      return <div className={`player-${good}-goods`}><div></div></div>
+    let i
+    for (i = 0; i < wheelbarrowExtensions; i++) {
+      goods.push(<div></div>)
+    }
+
+    return goodColors.map(color => {
+      return <div className={`player-${color}-goods`}>{ goods }</div>
     })
   }
 
@@ -29,13 +35,13 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
   //   }
   // }
 
-  const addWheelbarrowExtensions = {
-    //some kind of repeat prototype within a div
-    0: <div></div>,
-    1: <div></div>,
-    2: <div><div></div><div></div></div>,
-    3: <div><div></div><div></div></div>
-  }
+  // const addWheelbarrowExtensions = {
+  //   //some kind of repeat prototype within a div
+  //   0: <div></div>,
+  //   1: <div></div>,
+  //   2: <div><div></div><div></div></div>,
+  //   3: <div><div></div><div></div></div>
+  // }
 
   // const addWheelbarrowExtensions = (
   
