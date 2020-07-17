@@ -9,6 +9,7 @@ const PlayerCart = ({ playerInfo, lira, currentPlayerColor, wheelbarrowExtension
   }
 
   const wheelbarrowParts = () => {
+    console.log('wheelbarrowParts func fired')
     const goodColors = ['blue', 'red', 'green', 'yellow'];
     let goods = [<div></div>, <div></div>, <div></div>]
 

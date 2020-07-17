@@ -9,9 +9,9 @@ const Tile = (props) => {
     return assistants.filter(assistant => assistant === null).length
   }
 
-  const testFunc = () => {
-    console.log('testing stuff', props.action())
-  }
+  // const testFunc = () => {
+  //   console.log('testing stuff', props.action())
+  // }
 
   // const testObj = {
   //   name: 'Wainright',
@@ -47,7 +47,7 @@ const Tile = (props) => {
     <div className="assistants-space">
       { assistants }
     </div>
-    <button onClick={testFunc}>Test Action Button</button>
+    {/* <button onClick={testFunc}>Test Action Button</button> */}
   </button>
 }
 

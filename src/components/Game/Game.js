@@ -16,6 +16,8 @@ class Game extends Component {
       currentPlayer: {},
       displaySetup: true
     }
+
+    // this.movePlayer = this.movePlayer.bind(this)
   }
 
   //BOARD LAYOUT
@@ -63,19 +65,25 @@ class Game extends Component {
   //   this.setState({ players })
   // }
 
-  movePlayer = (moveTo) => {
+
+  movePlayer = (moveTo) =>  {
     let updatedAssistants = this.assistantCheck(moveTo)
 
-    this.tileAction(moveTo)
+    let updatedPlayer = this.tileAction(moveTo)
 
-    let updatedPlayer = {
-      ...this.state.currentPlayer, 
+    console.log('fresh updated Player', updatedPlayer)
+
+    updatedPlayer = {
+      ...updatedPlayer, 
       tile: moveTo, 
       assistants: updatedAssistants }
+
+    console.log('new updated player', updatedPlayer)
 
     let playerToReplace = this.state.players.findIndex(player => player.color === updatedPlayer.color);
     let players = this.state.players
     players[playerToReplace] = updatedPlayer
+    console.log('players line 85', players)
     let currentPlayer = this.setNextPlayer(playerToReplace)
 
     this.setState({ players, currentPlayer })
@@ -95,7 +103,27 @@ class Game extends Component {
   //TILE ACTION
   tileAction = (moveTo) => {
     let currentTile = this.state.boardLayout.find(tile => tile.number === moveTo)
-    console.log('test tileAction', currentTile)
+    console.log('test', currentTile)
+    // currentTile.action()
+    if (moveTo === 1) {
+      console.log('wainright action')
+      return this.wainrightAction()
+    } else {
+      console.log('other action')
+      return this.state.currentPlayer
+    }
+
+    return this.wainrightAction()
+  }
+
+  wainrightAction = () => {
+    let wheelbarrowExtensions = this.state.currentPlayer.wheelbarrowExtensions + 1
+    let updatedPlayer = {
+      ...this.state.currentPlayer,
+      wheelbarrowExtensions
+    }
+    // console.
+    return updatedPlayer
   }
 
   //ASSISTANTS
