@@ -1,6 +1,9 @@
+//Wainright
 const wainrightAction = () => {
   console.log('this is the test wainright action')
 }
+
+
 
 let Constantinople = {
   tiles: {

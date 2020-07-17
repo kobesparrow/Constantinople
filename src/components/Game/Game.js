@@ -65,6 +65,9 @@ class Game extends Component {
 
   movePlayer = (moveTo) => {
     let updatedAssistants = this.assistantCheck(moveTo)
+
+    this.tileAction(moveTo)
+
     let updatedPlayer = {
       ...this.state.currentPlayer, 
       tile: moveTo, 
@@ -74,7 +77,7 @@ class Game extends Component {
     let players = this.state.players
     players[playerToReplace] = updatedPlayer
     let currentPlayer = this.setNextPlayer(playerToReplace)
-    
+
     this.setState({ players, currentPlayer })
   }
 
@@ -87,6 +90,12 @@ class Game extends Component {
     }
     
     return this.state.players[nextIndex]
+  }
+
+  //TILE ACTION
+  tileAction = (moveTo) => {
+    let currentTile = this.state.boardLayout.find(tile => tile.number === moveTo)
+    console.log('test tileAction', currentTile)
   }
 
   //ASSISTANTS
@@ -146,6 +155,7 @@ class Game extends Component {
             relocateOther={ this.relocateOther }
             players={ this.state.players }
             movePlayer={ this.movePlayer }
+            currentPlayer={ this.state.currentPlayer }
           />
           <Players 
             players={ this.state.players }

@@ -13,17 +13,20 @@ const Tile = (props) => {
     console.log('testing stuff', props.action())
   }
 
-  const testObj = {
-    name: 'Wainright',
-    action: function() {
-      console.log('this is the test right now')
-    }
-  }
+  // const testObj = {
+  //   name: 'Wainright',
+  //   action: function() {
+  //     console.log('this is the test right now')
+  //   }
+  // }
 
 
   //ELEMENT CREATORS
   let players = props.players.map((player, index) => {
-  return player.tile === props.tileNumber && <div className={ `${player.color}-player` } key={ index } >{ calculateAssistants(player.assistants) }</div>
+    // if (props.currentPlayer.tile === props.tileNumber) {
+    //   console.log(`the current player has arrived on the ${props.tileName}`)
+    // }
+    return player.tile === props.tileNumber && <div className={ `${player.color}-player` } key={ index } >{ calculateAssistants(player.assistants) }</div>
   })
 
   let assistants = props.players.map((player, index) => {
