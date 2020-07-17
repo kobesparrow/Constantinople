@@ -9,16 +9,29 @@ const Tile = (props) => {
     return assistants.filter(assistant => assistant === null).length
   }
 
+  // const testFunc = () => {
+  //   console.log('testing stuff', props.action())
+  // }
+
+  // const testObj = {
+  //   name: 'Wainright',
+  //   action: function() {
+  //     console.log('this is the test right now')
+  //   }
+  // }
+
 
   //ELEMENT CREATORS
   let players = props.players.map((player, index) => {
-  return player.tile === props.tileNumber && <div className={ `${player.color}-player` } key={ index } >{ calculateAssistants(player.assistants) }</div>
+    // if (props.currentPlayer.tile === props.tileNumber) {
+    //   console.log(`the current player has arrived on the ${props.tileName}`)
+    // }
+    return player.tile === props.tileNumber && <div className={ `${player.color}-player` } key={ index } >{ calculateAssistants(player.assistants) }</div>
   })
 
   let assistants = props.players.map((player, index) => {
     return player.assistants.includes(tileNumber) && <div className={ `${player.color}-assistant` } key={ index } ></div>
   })
-
 
   return <button onClick={ () => props.movePlayer(tileNumber) } className="game-tile">
     <div>{ props.tileNumber } — { props.tileName }</div>
@@ -34,6 +47,7 @@ const Tile = (props) => {
     <div className="assistants-space">
       { assistants }
     </div>
+    {/* <button onClick={testFunc}>Test Action Button</button> */}
   </button>
 }
 

@@ -1,10 +1,28 @@
+//Wainright
+const wainrightAction = (currentPlayer) => {
+  let wheelbarrowExtensions = currentPlayer.wheelbarrowExtensions + 1
+  let updatedPlayer = {
+    currentPlayer,
+    wheelbarrowExtensions
+  }
+  return updatedPlayer
+}
+
+const fabricAction = () => {
+  console.log('you have come to the fabric warehouse, we sell pants here')
+}
+
+
+
 let Constantinople = {
   tiles: {
     base: [
       { number: 1,
-        name: 'Wainwright'},
+        name: 'Wainwright',
+        action: wainrightAction},
       { number: 2,
-        name: 'Fabric Warehouse'},
+        name: 'Fabric Warehouse',
+        action: fabricAction},
       { number: 3,
         name: 'Spice Warehouse'},
       { number: 4,

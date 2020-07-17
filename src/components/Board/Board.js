@@ -12,8 +12,10 @@ class Board extends Component {
                 tileName={ tile.name }
                 others={ this.props.others }
                 tileNumber={ tile.number }
+                action={ tile.action }
                 players={ this.props.players }
                 movePlayer={ this.props.movePlayer }
+                currentPlayer={ this.props.currentPlayer }
                 key={ index }
               />
     })

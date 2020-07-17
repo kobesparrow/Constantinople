@@ -28,3 +28,47 @@
 .red-current {
   border: 4px solid red;
 }
+
+.player-blue-goods {
+  display: flex;
+
+  div {
+    border: 1px solid #00008B;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+  }
+}
+
+.player-red-goods {
+  display: flex;
+
+  div {
+    border: 1px solid #8B0000;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+  }
+}
+
+.player-green-goods {
+  display: flex;
+
+  div {
+    border: 1px solid	#32CD32;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+  }
+}
+
+.player-yellow-goods {
+  display: flex;
+
+  div {
+    border: 1px solid #FFE200;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+  }
+}
